@@ -4,7 +4,7 @@
  * @param {number} b 
  * @returns {number}
  */
-function tambah(a, b) {
+export function tambah(a, b) {
     return a + b
 }
 
@@ -14,7 +14,7 @@ function tambah(a, b) {
  * @param {number} b 
  * @returns {number}
  */
-function kurang(a, b) {
+export function kurang(a, b) {
     return a - b
 }
 
@@ -24,7 +24,7 @@ function kurang(a, b) {
  * @param {number} b 
  * @returns {number}
  */
-function kali(a, b) {
+export function kali(a, b) {
     return a * b
 }
 
@@ -34,7 +34,7 @@ function kali(a, b) {
  * @param {number} b 
  * @returns {number | string}
  */
-function bagi(a, b) {
+export function bagi(a, b) {
     return b !== 0 ? a / b : "Pembagian oleh nol tidak diperbolehkan"
 }
 
@@ -44,7 +44,8 @@ function bagi(a, b) {
  * @param {number} b 
  * @returns {number}
  */
-function pangkat(a, b) {
+ export function pangkat(a, b) {
+    return a ** b;
 }
 
 /**
@@ -52,7 +53,9 @@ function pangkat(a, b) {
  * @param {number} n 
  * @returns {number}
  */
-function faktorial(n) {
+export function faktorial(n) {
+    if (n === 0) return 1;
+    return n * faktorial(n - 1);
 }
 
 /**
@@ -60,7 +63,12 @@ function faktorial(n) {
  * @param {number} n 
  * @returns {boolean}
  */
-function isPrima(n) {
+export function isPrima(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false;
+    }
+    return true;
 }
 
 /**
@@ -72,7 +80,8 @@ function isPrima(n) {
  * @param {number} b 
  * @returns {number}
  */
-function modulus(a, b) {
+export function modulus(a, b) {
+    return a % b;
 }
 
 /**
@@ -80,7 +89,7 @@ function modulus(a, b) {
  * @param {number} a 
  * @returns {number}
  */
-function absolut(a) {
+export function absolut(a) {
 }
 
 
@@ -90,7 +99,7 @@ function absolut(a) {
  * @param {number} b 
  * @returns {number}
  */
-function maksimum(a, b) {
+export function maksimum(a, b) {
 }
 
 /**
@@ -99,7 +108,7 @@ function maksimum(a, b) {
  * @param {number} b 
  * @returns {number}
  */
-function minimum(a, b) {
+export function minimum(a, b) {
 }
 
 /**
@@ -107,13 +116,6 @@ function minimum(a, b) {
  * @param {number} a 
  * @returns {number}
  */
-function bulatkan(a) {
+export function bulatkan(a) {
 }
 
-// Export hasil akhir
-module.exports = {
-    tambah,
-    kurang,
-    kali,
-    bagi
-}

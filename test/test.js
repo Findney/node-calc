@@ -1,4 +1,4 @@
-const {
+import {
   tambah,
   kurang,
   kali,
@@ -11,7 +11,7 @@ const {
   maksimum,
   minimum,
   bulatkan,
-} = require('../solution');
+} from '../solution.js';
 
 // Variabel untuk menghitung jumlah tes yang benar dan salah
 let correctCount = 0; // Jumlah tes yang benar
